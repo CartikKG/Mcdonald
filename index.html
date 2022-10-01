@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McDonald's</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://mcdindia.com/wp-content/uploads/2020/01/m-logo-big.svg"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Bungee+Spice&family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Bungee+Spice&family=Montserrat:wght@300&family=Rubik+Dirt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+      /* #Animation {
+      } */
+      #Animation > img {
+        /* de    */
+        /* width: 30%; */
+
+        position: absolute;
+        width: 25%;
+        height: 400px;
+        margin: auto;
+        margin-left: 36%;
+        top: 20%;
+      }
+
+      #WholeData {
+        display: none;
+      }
+      #WholeDatanew {
+        animation: fullbody 1s ease-in-out;
+        /* animation-timing-function: 2s ease-in-out; */
+        position: relative;
+        transition: all 1s;
+      }
+
+      @keyframes fullbody {
+        from {
+          left: -100%;
+          /* cubic-bezier(0.77, 0, 0.175, 1); */
+        }
+        to {
+          left: 0px;
+        }
+      }
+      nav {
+        height: 50%;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        /* z-index: -1; */
+        position: sticky;
+        /* top: 0%; */
+      }
+      nav > div > a {
+        text-decoration: none;
+        margin: 5px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        padding: 3px 2px;
+        transition: all 0.5s ease-in-out;
+        z-index: 5;
+      }
+      nav > div > a:hover {
+        border-bottom: 2px solid red;
+      }
+      #leftside {
+        width: 45%;
+        height: 100vh;
+        background-color: #ffbc0d;
+        z-index: 4;
+      }
+      #main {
+        display: flex;
+      }
+      #leftalltextdiv {
+        position: absolute;
+        top: 36%;
+        left: 12%;
+        font-size: larger;
+        color: #b30000;
+      }
+      .vi {
+        /* height: 20px; */
+        position: relative;
+        border-left: 15px solid #ffbc0d;
+        margin-left: 1%;
+        z-index: 100;
+        animation: kartik 1s ease-in-out;
+        /* animation-timing-function:  */
+        animation-delay: 1.5s;
+      }
+      .vii {
+        /* height: 20px; */
+        position: relative;
+        border-left: 15px solid #ffbc0d;
+        margin-left: 1%;
+        z-index: 100;
+        animation: kartikk 1.5s ease-in-out;
+        /* animation-timing-function:  */
+        animation-delay: 1.5s;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+      }
+      @keyframes kartik {
+        from {
+          top: -800px;
+        }
+        to {
+          top: 0px;
+        }
+      }
+      @keyframes kartikk {
+        from {
+          top: -900px;
+        }
+        to {
+          top: 0px;
+        }
+      }
+      video {
+        position: relative;
+        width: "100%";
+        height: "240";
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Animation">
+      <img
+        src="https://mcdindia.com/wp-content/uploads/2019/12/preloader.gif"
+        alt=""
+      />
+    </div>
+    <div id="WholeData">
+      <nav>
+        <div>
+          <a href="">
+            <img
+              style="width: 100%"
+              src="https://mcdindia.com/wp-content/uploads/2020/01/m-logo-big.svg"
+              alt=""
+          /></a>
+        </div>
+        <div>
+          <a href="./order.html"> <span> Menu</span></a>
+          <a href="./order.html"> <span> Happy Meal</span></a>
+          <a href="./order.html"> <span> Resaurant</span></a>
+          <a href=""> <span> McDelivery</span></a>
+          <a href=""> <span> News</span></a>
+          <a href=""> <span> Birthday Party</span></a>
+        </div>
+      </nav>
+      <div id="main">
+        <div id="leftside">
+          <div id="leftalltextdiv">
+            <h1 style="font-family: 'Righteous', cursive; font-size: 60px">
+              Value Meal
+            </h1>
+            <h1 style="font-family: 'Poppins', sans-serif">
+              For Every <br />
+              Budget
+            </h1>
+          </div>
+        </div>
+        <span class="vi"></span>
+        <span class="vii"></span>
+        <video
+          width="55%"
+          height="600"
+          autoplay
+          loop
+          controls
+          playsinline
+          muted
+        >
+          <source
+            src="https://mcdindia.b-cdn.net/mcdonald-s-value-meal-tvc-approved-option.webm"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

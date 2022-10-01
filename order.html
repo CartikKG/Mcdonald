@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Here</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://mcdindia.com/wp-content/uploads/2020/01/m-logo-big.svg"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Bungee+Spice&family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Bungee+Spice&family=Montserrat:wght@300&family=Rubik+Dirt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/60b736368c.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+      /* body {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          opacity: 0.3;
+        } */
+      #imggg {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+        filter: blur(2px);
+      }
+      #MainOver {
+        /* background-image: url(); */
+        background-color: rgb(0, 0, 0);
+        /* opacity: "none"; */
+        /* display: none; */
+      }
+      #burgeranimation {
+        top: 4%;
+        position: absolute;
+        width: 10%;
+        animation: burger 5s ease-in-out infinite;
+      }
+      #friesanimation {
+        /* right: 0%; */
+        top: 4%;
+        position: absolute;
+        width: 18%;
+        right: 0%;
+        animation: fries 5s ease-in-out infinite;
+      }
+      #friesanimation > img {
+        width: 100%;
+      }
+      @keyframes burger {
+        0% {
+          top: 4%;
+          left: 0%;
+        }
+        25% {
+          top: 76%;
+          left: 0%;
+        }
+        50% {
+          top: 76%;
+          left: 90%;
+        }
+        75% {
+          top: 0%;
+          left: 90%;
+        }
+      }
+      @keyframes fries {
+        0% {
+          top: 4%;
+          right: 0%;
+        }
+        25% {
+          top: 76%;
+          right: 0%;
+        }
+        50% {
+          top: 76%;
+          right: 85%;
+        }
+        75% {
+          top: 0%;
+          right: 85%;
+        }
+      }
+      #burgeranimation > img {
+        width: 100%;
+      }
+      nav {
+        height: 50%;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        /* z-index: -1; */
+        position: sticky;
+        /* top: 0%; */
+        border-bottom: 1px solid rgb(174, 174, 174);
+      }
+      nav > div > a {
+        text-decoration: none;
+        margin: 5px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        padding: 3px 2px;
+        transition: all 0.5s ease-in-out;
+        z-index: 5;
+      }
+      nav > div > a:hover {
+        border-bottom: 2px solid red;
+      }
+      #Menu {
+        position: absolute;
+        display: flex;
+        top: 20%;
+        left: 10%;
+        /* margin: auto; */
+        right: 10%;
+        /* margin: 10%; */
+      }
+      #Menu > div {
+        text-align: center;
+        border: 1px solid rgb(251, 255, 0);
+        margin-left: 1%;
+        width: 29%;
+        transition: all 0.3s ease-in-out;
+        background-color: rgb(255, 255, 255);
+      }
+      #Menu > div:hover {
+        transform: scale(1.1);
+      }
+      #Menu > div > img {
+        width: 100%;
+      }
+      #Menu > div > h4 {
+        color: red;
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
+      #Menu > div h5 {
+        font-size: 15px;
+        color: rgb(255, 94, 0);
+        margin-bottom: 2%;
+      }
+      #Menu > button {
+        font-size: large;
+        font-weight: bold;
+        margin-left: 2%;
+        width: 4%;
+        background-color: #ffbc0d;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      #Menu > button:hover {
+        background-color: red;
+        color: white;
+        transform: scale(1.1);
+        width: 5%;
+        height: 20%;
+        border-radius: 30px;
+      }
+      #orderPOPUP {
+        display: none;
+      }
+      #orderPOPUPFinal {
+        position: absolute;
+        /* height: 100vh; */
+        height: 88%;
+        width: 92%;
+        background-color: #ffffff;
+        margin: auto;
+        left: 4%;
+        top: 10%;
+        z-index: 10;
+        text-align: center;
+        border-radius: 30px;
+      }
+
+      #inordersucces {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        /* -webkit-filter: blur(10px);  Safari 6.0 - 9.0 
+        filter: blur(2px);*/
+      }
+      #displaypro {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 10px;
+        margin: auto;
+      }
+      #displaypro > div {
+        background-color: #e3e3e3;
+      }
+      #displaypro img {
+        width: 100%;
+      }
+      #msgpopu1 {
+        display: none;
+      }
+      #totalamount {
+        position: absolute;
+        font-size: 30px;
+        bottom: 0%;
+        left: 40%;
+      }
+      #closetheedit {
+        position: absolute;
+        top: 3%;
+        right: 2%;
+        font-size: 40px;
+
+        border-radius: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        cursor: pointer;
+      }
+      #orderNo {
+        position: absolute;
+        right: 8%;
+        top: 3%;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="MainOver">
+      <img
+        id="imggg"
+        src="https://b.zmtcdn.com/data/reviews_photos/aa8/5189756e0772c0d1309dc6deb8566aa8_1555692192.jpg"
+        alt=""
+      />
+      <span id="burgeranimation">
+        <img
+          src="https://www.freepnglogos.com/uploads/burger-png/come-into-our-hamburger-planet-there-hamburger-for-40.PNG"
+          alt=""
+      /></span>
+      <span id="friesanimation">
+        <img
+          src="https://www.pngall.com/wp-content/uploads/4/Mcdonalds-French-Fries.png"
+          alt=""
+      /></span>
+      <nav>
+        <div>
+          <a href="./index.html"
+            ><img
+              style="width: 100%"
+              src="https://mcdindia.com/wp-content/uploads/2020/01/m-logo-big.svg"
+              alt=""
+          /></a>
+        </div>
+        <div>
+          <a href="./order.html"> <span> Menu</span></a>
+          <a href="./order.html"> <span> Happy Meal</span></a>
+          <a href="./index.html"> <span> Resaurant</span></a>
+          <a href="./order.html"> <span> McDelivery</span></a>
+          <a href="./index.html"> <span> News</span></a>
+          <a href="./index.html"> <span> Birthday Party</span></a>
+        </div>
+      </nav>
+      <div id="Menu">
+        <div>
+          <img src="./Burger/burger_1.jpg" alt="" />
+          <h4>BURGER</h4>
+          <div style="display: flex; justify-content: space-around">
+            <h5>PRICE - RS 45/-</h5>
+
+            <input
+              type="checkbox"
+              id="Burger"
+              name="checksboxes"
+              value="Burger"
+            />
+          </div>
+        </div>
+        <div>
+          <img src="./Burger/Untitled-2.jpg" alt="" />
+          <h4>Fries</h4>
+          <div style="display: flex; justify-content: space-around">
+            <h5>PRICE - RS 55/-</h5>
+
+            <input
+              type="checkbox"
+              id="Fries"
+              name="checksboxes"
+              value="Fries"
+            />
+          </div>
+        </div>
+        <div>
+          <img src="./Burger/Untitled-4.jpg" alt="" />
+          <h4>ColdDrink</h4>
+          <div style="display: flex; justify-content: space-around">
+            <h5>PRICE - RS 20/-</h5>
+
+            <input
+              type="checkbox"
+              id="ColdDrink"
+              name="checksboxes"
+              value="ColdDrink"
+            />
+          </div>
+        </div>
+        <div>
+          <img src="./Burger/Untitled-3.jpg" alt="" />
+          <h4>COMBO-PACK</h4>
+          <div style="display: flex; justify-content: space-around">
+            <h5>PRICE - RS 149/-</h5>
+
+            <input
+              type="checkbox"
+              id="Combo"
+              name="checksboxes"
+              value="Combo"
+            />
+          </div>
+        </div>
+        <button onclick="placeorder()">
+          C <br />L <br />I <br />C <br />K <br />
+          <br />
+          TO <br />
+          <br />O
+          <br />
+          R <br />
+          D <br />E <br />R <br />
+          <br />
+          N <br />
+          O <br />W
+        </button>
+      </div>
+      <div id="orderPOPUP">
+        <span id="closetheedit">
+          <i class="fa-sharp fa-solid fa-xmark"></i
+        ></span>
+        <span id="orderNo">ORDER NO </span>
+        <div>
+          <img id="inordersucces" src="./Burger/4rv8.gif" alt="" />
+          <h1 id="msgpopu1">HURRAY!!</h1>
+          <h1 id="msgpopu0">YOUR ORDER IS PREPARING</h1>
+
+          <div id="displaypro"></div>
+
+          <h3 id="totalamount">
+            TOTAL AMOUNT - <span id="showamount">0</span>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./order.js"></script>
+</html>
